@@ -1,8 +1,8 @@
 {
-  "name": "simple-electron-react",
-  "productName": "React Electron App",
+  "name": "bug_logger",
+  "productName": "BugLogger",
   "version": "1.0.0",
-  "description": "Simple boilerplate for building Electron apps with React",
+  "description": "App bug trucker for teams",
   "license": "MIT",
   "engines": {
     "node": ">=9.0.0",
@@ -21,8 +21,12 @@
     "postpackage": "electron-packager ./ --out=./release-builds"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "moment": "^2.29.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-bootstrap": "^2.6.0",
+    "react-dom": "^16.13.1",
+    "react-moment": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -33,7 +37,7 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "electron": "^15.5.5",
-    "electron-devtools-installer": "^3.0.0",
+    "electron-devtools-installer": "^3.1.1",
     "electron-packager": "^14.2.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
