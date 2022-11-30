@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Table from 'react-bootstrap/Table'
-import { LogItem } from "./LogItem"
+import Alert from 'react-bootstrap/Alert'
+import LogItem from "./LogItem"
+import AddLogItem from "./AddLogItem"
 
 const App = () => {
 	const [logs, setLogs] = useState([
@@ -28,8 +30,44 @@ const App = () => {
 		},
 	])
 
+	const [alert, setAlert] = useState({
+		show: false,
+		message: '',
+		variant: 'success'
+	})
+
+	function addItem(item) {
+		if (item.text === '' || item.user === '' || item.priority === '') {
+			showAlert('Please fill all the fields', 'danger')
+			return
+		}
+
+		item._id = Math.floor(Math.random * 90000) + 10000
+		item.created = new Date().toString()
+		setLogs([...logs, item])
+		showAlert('Log Added')
+	}
+
+	function showAlert(message, variant = 'success', seconds = 1000) {
+		setAlert({
+			show: true,
+			message,
+			variant
+		})
+
+		setTimeout(() => {
+			setAlert({
+				show: false,
+				message: '',
+				variant: 'success'
+			})
+		}, seconds)
+	}
+
 	return (
-		<Container fluid className='app'>
+		<Container fluid='lg' className='app'>
+			<AddLogItem addItem={ addItem } />
+			{ alert.show && <Alert variant={ alert.variant }>{ alert.message }</Alert> }
 			<Table>
 				<thead>
 					<tr>

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button"
 import Badge from "react-bootstrap/Badge"
 import Moment from "react-moment"
 
-export const LogItem = ({ log: { _id, priority, text, user, created } }) => {
+const LogItem = ({ log: { _id, priority, text, user, created } }) => {
 
     const setBackground = () => {
         if (priority === 'high') {
@@ -31,3 +31,5 @@ export const LogItem = ({ log: { _id, priority, text, user, created } }) => {
         </tr>
     )
 }
+
+export default LogItem
