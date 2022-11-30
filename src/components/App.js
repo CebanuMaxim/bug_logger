@@ -64,6 +64,11 @@ const App = () => {
 		}, seconds)
 	}
 
+	function deleteItem(_id) {
+		setLogs(logs.filter((item) => item._id !== _id))
+		showAlert('Log removed')
+	}
+
 	return (
 		<Container fluid='lg' className='app'>
 			<AddLogItem addItem={ addItem } />
@@ -81,7 +86,7 @@ const App = () => {
 				<tbody>
 					{
 						logs.map((log) => (
-							<LogItem key={ log._id } log={ log } />
+							<LogItem key={ log._id } log={ log } deleteItem={ deleteItem } />
 						))
 					}
 				</tbody>
