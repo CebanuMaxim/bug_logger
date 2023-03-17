@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "electron-packager": "^17.1.1",
     "moment": "^2.29.4",
     "mongoose": "^6.7.5",
     "react": "^16.13.1",
@@ -38,15 +37,15 @@
     "babili-webpack-plugin": "^0.1.2",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
-    "electron": "^8.2.5",
-    "electron-devtools-installer": "^3.0.0",
+    "electron": "^15.5.5",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-packager": "^14.2.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "style-loader": "^1.2.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "yarn": "^1.22.19"
+    "webpack-dev-server": "^3.10.3"
   }
 }
